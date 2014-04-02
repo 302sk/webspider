@@ -1,0 +1,53 @@
+<html><head><title>file list</title></head>
+<body>
+<script>
+var xmlHttp = null;
+function httpGet(theUrl)
+{
+
+    
+    xmlHttp = new XMLHttpRequest();
+    xmlHttp.onreadystatechange=ProcessRequest;
+    xmlHttp.open("GET", theUrl, false);
+    xmlHttp.send(null);
+}
+
+function ProcessRequest() 
+{
+    if ( xmlHttp.readyState == 4 && xmlHttp.status == 200 ) 
+    {
+        if ( xmlHttp.responseText == "Not found" ) 
+        {
+//            document.getElementById( "TextBoxCustomerName"    ).value = "Not found";
+//            document.getElementById( "TextBoxCustomerAddress" ).value = "";
+                alert(xmlHttp.responseText);
+        }
+        else
+        {
+            var info = eval ( "(" + xmlHttp.responseText + ")" );
+            alert(xmlHttp.responseText);
+            // No parsing necessary with JSON!        
+//            document.getElementById( "TextBoxCustomerName"    ).value = info.jsonData[ 0 ].cmname;
+//            document.getElementById( "TextBoxCustomerAddress" ).value = info.jsonData[ 0 ].cmaddr1;
+        }                    
+    }
+}
+
+function dosomething(arg)
+{
+    alert(arg);
+}
+</script>
+<a href="javascript:dosomething('test');">clike me</a>
+1<a href="javascript:httpGet('http://filex.sdufe.edu.cn/ownex.php?url=201404021638556957885.ppt&name=Chap004.ppt');">Chap004.ppt</a></br>
+2<a href="http://filex.sdufe.edu.cn/ownex.php?url=201404021345112665527.doc&name=%D4%BA%BC%B6%D3%C5%D0%E3%CD%C5%D4%B1+%BD%AA%D1%C7%BB%D4.doc">院级优秀团员 姜亚辉.doc</a></br>
+3<a href="http://filex.sdufe.edu.cn/ownex.php?url=201403311947267923583.doc&name=%C2%DB%A1%B6%C2%B9%CC%D8%B5%A4%B9%E6%D4%F2%A1%B7%CF%C2%C5%FA%C1%BF%BA%CF%CD%AC%B5%C4%D3%D0%CF%DE%C6%F5%D4%BC%D7%D4%D3%C9%D4%AD%D4%F2.doc">论《鹿特丹规则》下批量合同的有限契约自由原则.doc</a></br>
+4<a href="http://filex.sdufe.edu.cn/ownex.php?url=201403312003264463439.doc&name=%B3%F5%B8%E5%A3%BA%C2%DB%A1%B6%C2%B9%CC%D8%B5%A4%B9%E6%D4%F2%A1%B7%CF%C2%C5%FA%C1%BF%BA%CF%CD%AC%B5%C4%D3%D0%CF%DE%C6%F5%D4%BC%D7%D4%D3%C9%D4%AD%D4%F2.doc">初稿：论《鹿特丹规则》下批量合同的有限契约自由原则.doc</a></br>
+5<a href="http://filex.sdufe.edu.cn/ownex.php?url=201403301145393982788.rar&name=%D7%F3.rar">左.rar</a></br>
+6<a href="http://filex.sdufe.edu.cn/ownex.php?url=201403312003309898925.doc&name=%B3%F5%B8%E5%A3%BA%C2%DB%A1%B6%C2%B9%CC%D8%B5%A4%B9%E6%D4%F2%A1%B7%CF%C2%C5%FA%C1%BF%BA%CF%CD%AC%B5%C4%D3%D0%CF%DE%C6%F5%D4%BC%D7%D4%D3%C9%D4%AD%D4%F2.doc">初稿：论《鹿特丹规则》下批量合同的有限契约自由原则.doc</a></br>
+7<a href="http://filex.sdufe.edu.cn/ownex.php?url=201403292217552105224.zip&name=%C9%CF%B4%AB%CE%C4%B5%B5.zip">上传文档.zip</a></br>
+8http://filex.sdufe.edu.cn/</br>
+9<a href="http://filex.sdufe.edu.cn/ownex.php?url=201404020921087024902.doc&name=998.doc">998.doc</a></br>
+
+</body>
+</html>
